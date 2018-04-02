@@ -28,7 +28,8 @@ MicroBitPin RN2483_PIN_RESET(MICROBIT_ID_IO_P2, MICROBIT_PIN_P2, PIN_CAPABILITY_
 GroveButton button(MICROBIT_PIN_P1);
 //general
 int ret = -1;
-char buff[RN2483_MAX_BUFF] = {'\0'};
+char buff_rx[RN2483_MAX_BUFF] = {'\0'};
+char buff_tx[RN2483_MAX_BUFF] = {'\0'};
 
 //============
 // PROTOTYPES
@@ -65,9 +66,12 @@ int main()
         //if button pressed
         if ((bool)button.read() == true)
         {
+            //get temperature
+            sprintf(buff_tx, "%i", uBit.thermometer.getTemperature());
+            
             //tx hello
             uBit.display.scroll("tx", 75);
-            ret = RN2483_tx(&uBit.serial, "hello", true, buff);
+            ret = RN2483_tx(&uBit.serial, buff_tx, true, buff_rx);
             
             if (ret != RN2483_SUCCESS && ret != RN2483_NODOWN)
                 goto ERROR;
@@ -78,17 +82,18 @@ int main()
 
             //print any downlink
             if (ret == RN2483_SUCCESS)
-                uBit.display.scroll(buff);
-            
-            memset(buff, '\0', strlen(buff));
+                uBit.display.scroll(buff_rx);
+           
+            //cleanup
+            memset(buff_tx, '\0', strlen(buff_tx));
+            memset(buff_rx, '\0', strlen(buff_rx));
             uBit.sleep(10000);
         }
 
-        uBit.display.scroll(".", 75);
+        uBit.display.scrollAsync(".", 75);
     }
 //----
 //exit
-EXIT:
     uBit.display.scroll("BYE");
     release_fiber();
     return 0;
