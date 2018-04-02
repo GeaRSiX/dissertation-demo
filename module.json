@@ -1,0 +1,12 @@
+{
+  "name": "assignment-3",
+  "version": "1.0.0",
+  "bin": "./source",
+  "private": true,
+  "description": "Simple LoRa demo that tx's \"hello\" and recieves \"world\"",
+  "author": "Alexander Collins <alexander-collins@outlook.com>",
+  "license": "MIT",
+  "dependencies": {
+    "microbit": "lancaster-university/microbit"
+  }
+}
