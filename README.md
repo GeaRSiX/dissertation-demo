@@ -33,6 +33,7 @@ These are external modules that this demo is using (that I wrote):
 	* https://github.com/GeaRSiX/MicroIMG-library
 
 ## Running
+0. See Setup
 1. Plug the MicroBit into the shield (see images in Setup)
 2. Plug a Grove Button module into the shield (I/O port)
 3. After it's finished initialising, you'll see a dot scroll across the screen
@@ -42,6 +43,12 @@ These are external modules that this demo is using (that I wrote):
 
 
 ## Setup
+1. ```git clone <THIS REPO>```
+2. ```yt target bbc-microbit-classic-gcc```
+3. ```yt install```
+4. ```yt build```
+5. ```cp build/bbc-microbit-classic-gcc/source/embedded-iot-devkit-demo-combined.hex /media/<USER>/MICROBIT/```
+
 As stated in the overview, this is **a lot** easier with the RN2483 shield (see image below). If not you'll have to find a way to connect the components to their respective pins, see Pin Mapping for details on this.
 
 ### LoRaWAN configuration
