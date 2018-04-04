@@ -23,13 +23,13 @@ The demo starts by initialising itself and the RN2483 module. If this succeeds, 
 #### External Modules
 These are external modules that this demo is using (that I wrote):
 
-1. The RN2483 library is written in C and provides users with an interface to the RN2483 module, for more details see the README: https://github.com/GeaRSiX/General-Platform-RN2483-Library/blob/platform/mbit/README.md
+1. The RN2483 library is written in C and provides users with an interface to the RN2483 module, for more details see the README: https://github.com/GeaRSiX/dissertation-RN2483-Library/blob/platform/mbit/README.md
 
-2. The Grove framework is written in C++ and provides a simple framework for using an supported Grove Module. For more details see the README: https://github.com/GeaRSiX/General-Platform-Grove-Framework/blob/platform/mbit/README.md
+2. The Grove framework is written in C++ and provides a simple framework for using an supported Grove Module. For more details see the README: https://github.com/GeaRSiX/dissertation-Grove-Framework/blob/platform/mbit/README.md
 
 3. For more details on the relevant projects used, see their respective GitHub repos:
-	* https://github.com/GeaRSiX/General-Platform-RN2483-Library
-	* https://github.com/GeaRSiX/General-Platform-Grove-Framework
+	* https://github.com/GeaRSiX/dissertation-RN2483-Library
+	* https://github.com/GeaRSiX/dissertation-Grove-Framework
 	* https://github.com/GeaRSiX/MicroIMG-library
 
 ## Running
@@ -87,4 +87,4 @@ Here are images of the MicroBit shield.
 
 
 ## Authors
-**Alexander Collins** - [14029202]
+**Alexander Collins**
