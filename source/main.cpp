@@ -11,12 +11,13 @@
 #include "grove-drivers/GroveDrivers.h"     //Grove*
 //defines
 // io
-#define USBBAUD    115200
-#define RN2483BAUD 57600
+#define USBBAUD     115200
+#define RN2483BAUD  57600
 #define RN2483TX    MICROBIT_PIN_P12
 #define RN2483RX    MICROBIT_PIN_P8
 // lora
 #define MAX_JOIN_ATTEMPTS   1
+#define REST_PERIOD_MS      (60 * 1000)     //1min
 
 //=========
 // GLOBALS
@@ -69,9 +70,9 @@ int main()
             //get temperature
             sprintf(buff_tx, "%i", uBit.thermometer.getTemperature());
             
-            //tx hello
+            //tx temperature data
             uBit.display.scroll("tx", 75);
-            ret = RN2483_tx(&uBit.serial, buff_tx, true, buff_rx);
+            ret = RN2483_tx(&uBit.serial, buff_tx, false, buff_rx);
             
             if (ret != RN2483_SUCCESS && ret != RN2483_NODOWN)
                 goto ERROR;
@@ -87,7 +88,7 @@ int main()
             //cleanup
             memset(buff_tx, '\0', strlen(buff_tx));
             memset(buff_rx, '\0', strlen(buff_rx));
-            uBit.sleep(10000);
+            uBit.sleep(REST_PERIOD_MS);
         }
 
         uBit.display.scrollAsync(".", 75);

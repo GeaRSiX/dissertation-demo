@@ -56,6 +56,12 @@ As stated in the overview, this is **a lot** easier with the RN2483 shield (see 
 curl -X GET --header 'Accept: text/plain' 'https://student-diss.data.thethingsnetwork.org/api/v2/query/demo'
 ```
 
+* You could also just run the nodejs script I knocked up, this fetches the data every 10secs, decodes the base64 and prints it to the console with the timestamp
+**You might need to configure the fetchOptions in the file**
+```
+	nodejs ttn-data-read.js
+```
+
 ### Pin Mappings
 |Module Pin|MicroBit Pin|
 |---|---|

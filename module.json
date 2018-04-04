@@ -1,9 +1,9 @@
 {
-  "name": "assignment-3",
+  "name": "embedded-iot-devkit-demo",
   "version": "1.0.0",
   "bin": "./source",
   "private": true,
-  "description": "Simple LoRa demo that tx's \"hello\" and recieves \"world\"",
+  "description": "Simple demo for an Embedded IoT Devkit that tx's temperature data via LoRaWAN",
   "author": "Alexander Collins <alexander-collins@outlook.com>",
   "license": "MIT",
   "dependencies": {
