@@ -1,7 +1,7 @@
-# Challenge 3
+# RN2483-Library & Grove-Framework demo
 Transmits a reading of the MicroBit's thermometer via LoRa whenever the connected Grove Button is pressed.
 
-**MicroBit RN2483 Shield required** (_ask B.Gaster_)
+**MicroBit RN2483 Shield required**
 
 ## Contents
 1. Overview
