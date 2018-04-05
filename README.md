@@ -1,7 +1,7 @@
-# Challenge 3
+# RN2483-Library & Grove-Framework demo
 Transmits a reading of the MicroBit's thermometer via LoRa whenever the connected Grove Button is pressed.
 
-**MicroBit RN2483 Shield required** (_ask B.Gaster_)
+**MicroBit RN2483 Shield required**
 
 ## Contents
 1. Overview
@@ -23,16 +23,17 @@ The demo starts by initialising itself and the RN2483 module. If this succeeds, 
 #### External Modules
 These are external modules that this demo is using (that I wrote):
 
-1. The RN2483 library is written in C and provides users with an interface to the RN2483 module, for more details see the README: https://github.com/GeaRSiX/General-Platform-RN2483-Library/blob/platform/mbit/README.md
+1. The RN2483 library is written in C and provides users with an interface to the RN2483 module, for more details see the README: https://github.com/GeaRSiX/dissertation-RN2483-Library/blob/platform/mbit/README.md
 
-2. The Grove framework is written in C++ and provides a simple framework for using an supported Grove Module. For more details see the README: https://github.com/GeaRSiX/General-Platform-Grove-Framework/blob/platform/mbit/README.md
+2. The Grove framework is written in C++ and provides a simple framework for using an supported Grove Module. For more details see the README: https://github.com/GeaRSiX/dissertation-Grove-Framework/blob/platform/mbit/README.md
 
 3. For more details on the relevant projects used, see their respective GitHub repos:
-	* https://github.com/GeaRSiX/General-Platform-RN2483-Library
-	* https://github.com/GeaRSiX/General-Platform-Grove-Framework
+	* https://github.com/GeaRSiX/dissertation-RN2483-Library
+	* https://github.com/GeaRSiX/dissertation-Grove-Framework
 	* https://github.com/GeaRSiX/MicroIMG-library
 
 ## Running
+0. See Setup
 1. Plug the MicroBit into the shield (see images in Setup)
 2. Plug a Grove Button module into the shield (I/O port)
 3. After it's finished initialising, you'll see a dot scroll across the screen
@@ -42,6 +43,12 @@ These are external modules that this demo is using (that I wrote):
 
 
 ## Setup
+1. ```git clone <THIS REPO>```
+2. ```yt target bbc-microbit-classic-gcc```
+3. ```yt install```
+4. ```yt build```
+5. ```cp build/bbc-microbit-classic-gcc/source/embedded-iot-devkit-demo-combined.hex /media/<USER>/MICROBIT/```
+
 As stated in the overview, this is **a lot** easier with the RN2483 shield (see image below). If not you'll have to find a way to connect the components to their respective pins, see Pin Mapping for details on this.
 
 ### LoRaWAN configuration
@@ -80,4 +87,4 @@ Here are images of the MicroBit shield.
 
 
 ## Authors
-**Alexander Collins** - [14029202]
+**Alexander Collins**
