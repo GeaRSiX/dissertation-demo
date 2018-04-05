@@ -17,7 +17,7 @@ const fetchOptions = {
     }
 };
 const fetchInterval = (10 * 1000);  //10secs
-var data;
+var data = [];
 //printData stuff
 const printInterval = (11 * 1000);   //11secs
 
@@ -41,9 +41,13 @@ function fetchData() {
         });
 
         response.on('end', () => {
-            data = JSON.parse(responseData).map((element, index) => {
-                return [element.time, element.raw];
-            });
+            if (responseData != '') {
+                data = JSON.parse(responseData).map((element, index) => {
+                    return [element.time, element.raw];
+                });
+            } else {
+                console.log('No data to retrieve')
+            }
         });
     }).on('error', (err) => {
         console.error('ERR! fetchData()');
